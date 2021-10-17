@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Text, View, TouchableOpacity, ScrollView } from 'react-native'
 import styled from 'styled-components'
 import Buttons from '../components/Home/Buttons'
+import Categories from '../components/Home/Categories'
 
 export default function HomeScreen({ navigation }) {
   const [activeTab, setActiveTab] = useState('delivery')
@@ -9,6 +10,7 @@ export default function HomeScreen({ navigation }) {
   return (
     <PageWrapper>
       <Buttons activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Categories />
 
       <Text>Home Screen</Text>
     </PageWrapper>
