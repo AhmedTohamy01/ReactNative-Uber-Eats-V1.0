@@ -1,58 +1,65 @@
 import React from 'react'
 import { Text, Image, ScrollView, View, TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
-import ShoppingBag from '../../assets/images/shopping-bag.png'
-import SoftDrinks from '../../assets/images/soft-drink.png'
-import FastFood from '../../assets/images/fast-food.png'
-import Bread from '../../assets/images/bread.png'
-import Coffee from '../../assets/images/coffee.png'
-import Deals from '../../assets/images/deals.png'
-import Desserts from '../../assets/images/desserts.png'
+import Cocktails from '../../assets/images/bar.png'
+import Pizza from '../../assets/images/pizza.png'
+import Noodels from '../../assets/images/noodels.png'
+import Seafood from '../../assets/images/seafood.png'
+import Italian from '../../assets/images/italian.png'
+import Breakfast from '../../assets/images/breakfast.png'
+import Sandwiches from '../../assets/images/sandwiches.png'
+import Everything from '../../assets/images/everything.png'
 
 export default function Categories() {
   return (
     <CategoriesWrapper horizontal showsHorizontalScrollIndicator={false}>
       <StyledView>
-        <TouchableOpacity>
-          <StyledImage source={ShoppingBag} />
-          <StyledText>Pick-up</StyledText>
-        </TouchableOpacity>
+        <StyledTouchableOpacity>
+          <StyledImage source={Cocktails} />
+          <StyledText>Cocktails</StyledText>
+        </StyledTouchableOpacity>
       </StyledView>
       <StyledView>
-        <TouchableOpacity>
-          <StyledImage source={SoftDrinks} />
-          <StyledText>Drinks</StyledText>
-        </TouchableOpacity>
+        <StyledTouchableOpacity>
+          <StyledImage source={Pizza} />
+          <StyledText>Pizza</StyledText>
+        </StyledTouchableOpacity>
       </StyledView>
       <StyledView>
-        <TouchableOpacity>
-          <StyledImage source={FastFood} />
-          <StyledText>Burger</StyledText>
-        </TouchableOpacity>
+        <StyledTouchableOpacity>
+          <StyledImage source={Noodels} />
+          <StyledText>Noodels</StyledText>
+        </StyledTouchableOpacity>
       </StyledView>
       <StyledView>
-        <TouchableOpacity>
-          <StyledImage source={Bread} />
-          <StyledText>Bread</StyledText>
-        </TouchableOpacity>
+        <StyledTouchableOpacity>
+          <StyledImage source={Seafood} />
+          <StyledText>Seafood</StyledText>
+        </StyledTouchableOpacity>
       </StyledView>
       <StyledView>
-        <TouchableOpacity>
-          <StyledImage source={Coffee} />
-          <StyledText>Coffee</StyledText>
-        </TouchableOpacity>
+        <StyledTouchableOpacity>
+          <StyledImage source={Italian} />
+          <StyledText>Italian</StyledText>
+        </StyledTouchableOpacity>
       </StyledView>
       <StyledView>
-        <TouchableOpacity>
-          <StyledImage source={Deals} />
-          <StyledText>Deals</StyledText>
-        </TouchableOpacity>
+        <StyledTouchableOpacity>
+          <StyledImage source={Breakfast} />
+          <StyledText>Breakfast</StyledText>
+        </StyledTouchableOpacity>
       </StyledView>
       <StyledView>
-        <TouchableOpacity>
-          <StyledImage source={Desserts} />
-          <StyledText>Desserts</StyledText>
-        </TouchableOpacity>
+        <StyledTouchableOpacity>
+          <StyledImage source={Sandwiches} />
+          <StyledText>Sandwiches</StyledText>
+        </StyledTouchableOpacity>
+      </StyledView>
+      <StyledView>
+        <StyledTouchableOpacity>
+          <StyledImage source={Everything} />
+          <StyledText>All Categories</StyledText>
+        </StyledTouchableOpacity>
       </StyledView>
     </CategoriesWrapper>
   )
@@ -60,9 +67,9 @@ export default function Categories() {
 
 const StyledImage = styled(Image)`
   /* border: 1px solid red; */
-  width: 50px;
-  height: 50px;
-  margin-right: 30px;
+  width: 60px;
+  height: 60px;
+  /* margin-right: 30px; */
 `
 
 const StyledText = styled(Text)`
@@ -71,6 +78,7 @@ const StyledText = styled(Text)`
 
 const StyledView = styled(View)`
   /* border: 1px solid red; */
+  margin-right: 30px;
 `
 
 const CategoriesWrapper = styled(ScrollView).attrs({
@@ -83,3 +91,8 @@ const CategoriesWrapper = styled(ScrollView).attrs({
     // borderWidth: 1,
   },
 })``
+
+const StyledTouchableOpacity = styled(TouchableOpacity)`
+  /* border: 1px solid green; */
+  align-items: center;
+`
