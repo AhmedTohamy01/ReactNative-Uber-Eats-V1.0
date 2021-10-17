@@ -883,7 +883,7 @@ export const yelpData = {
         latitude: 34.04712,
         longitude: -118.26073,
       },
-      transactions: [],
+      transactions: ['delivery'],
       price: '$$$',
       location: {
         address1: '813 Flower St',
@@ -927,7 +927,7 @@ export const yelpData = {
         latitude: 34.063763,
         longitude: -118.296482,
       },
-      transactions: [],
+      transactions: ['delivery'],
       price: '$$$',
       location: {
         address1: '3429 W 6th St',
@@ -1464,7 +1464,7 @@ export const yelpData = {
         latitude: 34.03266,
         longitude: -118.35751,
       },
-      transactions: [],
+      transactions: ['delivery'],
       price: '$$',
       location: {
         address1: '5263 W Adams Blvd',
@@ -1981,7 +1981,7 @@ export const yelpData = {
         latitude: 34.07587723057971,
         longitude: -118.3233931,
       },
-      transactions: [],
+      transactions: ['delivery'],
       location: {
         address1: '244 N Larchmont Blvd',
         address2: '',
