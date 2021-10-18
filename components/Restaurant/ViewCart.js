@@ -29,6 +29,8 @@ export default function ViewCart({}) {
   )
 }
 
+/*---> Styles <---*/
+
 const StyledTouchableOpacity = styled(TouchableOpacity)`
   /* border: 1px solid red; */
   width: 300px;

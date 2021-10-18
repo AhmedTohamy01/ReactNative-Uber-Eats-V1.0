@@ -21,6 +21,8 @@ export default function Buttons({ activeTab, setActiveTab }) {
   )
 }
 
+/*---> Styles <---*/
+
 const ButtonsWrapper = styled(View)`
   /* border: 1px solid red; */
   align-items: center;

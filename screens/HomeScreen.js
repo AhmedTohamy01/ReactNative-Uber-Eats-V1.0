@@ -32,6 +32,7 @@ export default function HomeScreen({ navigation }) {
 }
 
 /*---> Styles <---*/
+
 const PageWrapper = styled(View)`
   /* border: 1px solid yellow; */
   align-items: center;

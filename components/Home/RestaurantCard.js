@@ -40,6 +40,8 @@ export default function RestaurantCard({
   )
 }
 
+/*---> Styles <---*/
+
 const CardWrapper = styled(View)`
   border: 1px solid black;
   height: 250px;

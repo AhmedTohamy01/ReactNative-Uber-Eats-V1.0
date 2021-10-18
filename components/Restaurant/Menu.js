@@ -36,6 +36,8 @@ export default function Menu() {
   )
 }
 
+/*---> Styles <---*/
+
 const MenuWrapper = styled(View)`
   /* border: 1px solid red; */
   align-items: flex-start;

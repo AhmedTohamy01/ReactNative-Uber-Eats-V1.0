@@ -65,6 +65,8 @@ export default function Categories() {
   )
 }
 
+/*---> Styles <---*/
+
 const StyledImage = styled(Image)`
   /* border: 1px solid red; */
   width: 60px;

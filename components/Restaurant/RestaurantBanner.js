@@ -22,6 +22,8 @@ export default function RestaurantBanner({ route }) {
   )
 }
 
+/*---> Styles <---*/
+
 const BannerWrapper = styled(View)`
   /* border: 1px solid red; */
   /* align-items: center; */
