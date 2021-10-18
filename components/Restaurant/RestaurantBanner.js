@@ -28,18 +28,19 @@ const BannerWrapper = styled(View)`
   /* border: 1px solid red; */
   /* align-items: center; */
   width: 100%;
-  height: 250px;
+  /* height: 250px; */
+  padding-bottom: 10px;
 `
 
 const BannerImage = styled(Image)`
   /* border: 1px solid red; */
-	height: 60%;
-	width: 100%;
+  width: 100%;
+  height: 180px;
 `
 
 const InfoWrapper = styled(View)`
   /* border: 1px solid red; */
-	padding: 0px 10px;
+  padding: 0px 10px;
 `
 
 const Title = styled(Text)`
