@@ -36,7 +36,7 @@ export default function Cart({ route, navigation }) {
 
   const handleCheckoutClick = () => {
     setShowCartModal(false)
-    navigation.navigate('OrderConfirm', {})
+    navigation.navigate('OrderConfirmScreen')
   }
 
   return (
