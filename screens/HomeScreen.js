@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Text, View, TouchableOpacity, ScrollView } from 'react-native'
 import styled from 'styled-components'
 import Buttons from '../components/Home/Buttons'
@@ -8,13 +8,37 @@ import RestaurantCard from '../components/Home/RestaurantCard'
 
 export default function HomeScreen({ navigation }) {
   const [activeTab, setActiveTab] = useState('delivery')
+  const [activeCategory, setActiveCategory] = useState('all')
+  const [filteredData, setFilteredData] = useState([])
+
+  const getFilteredData = () => {
+    const filteredArr = []
+    const arr = yelpData.businesses
+
+    for (let i = 0; i < arr.length; i++) {
+      const catArr = arr[i].categories.map((item) => item.alias)
+      if (catArr.includes(activeCategory)) {
+        filteredArr.push(arr[i])
+      }
+    }
+
+    if (activeCategory === 'all') {
+      return arr
+    } else {
+      return filteredArr
+    }
+  }
+
+  useEffect(() => {
+    setFilteredData(getFilteredData())
+  }, [activeCategory])
 
   return (
     <PageWrapper>
       <Buttons activeTab={activeTab} setActiveTab={setActiveTab} />
-      <Categories />
+      <Categories setActiveCategory={setActiveCategory} />
       <StyledScrollView showsVerticalScrollIndicator={false}>
-        {yelpData?.businesses.map((item) => (
+        {filteredData?.map((item) => (
           <RestaurantCard
             key={item.id}
             image={item.image_url}
