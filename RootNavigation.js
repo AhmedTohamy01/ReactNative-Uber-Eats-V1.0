@@ -1,6 +1,6 @@
 import React from 'react'
 import HomeScreen from './screens/HomeScreen'
-// import RestScreen from './screens/RestScreen'
+import RestaurantScreen from './screens/RestaurantScreen'
 // import OrderConfirm from './screens/OrderConfirm'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -16,8 +16,8 @@ export default function RootNavigation() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home' screenOptions={screenOptions}>
         <Stack.Screen name='HomeScreen' component={HomeScreen} />
-        {/* <Stack.Screen name='Restaurant' component={RestScreen} />
-        <Stack.Screen name='OrderConfirm' component={OrderConfirm} /> */}
+        <Stack.Screen name='RestaurantScreen' component={RestaurantScreen} />
+        {/* <Stack.Screen name='OrderConfirm' component={OrderConfirm} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   )
