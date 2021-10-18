@@ -41,10 +41,9 @@ export default function RestaurantCard({
 }
 
 /*---> Styles <---*/
-
 const CardWrapper = styled(View)`
   border: 1px solid black;
-  height: 250px;
+  /* min-height: 250px; */
   width: 100%;
   padding: 10px;
   width: 90%;
@@ -55,7 +54,7 @@ const CardWrapper = styled(View)`
 const StyledImage = styled(Image).attrs({ resizeMode: 'cover' })`
   /* border: 1px solid red; */
   width: 100%;
-  height: 70%;
+  height: 180px;
   border-radius: 10px;
 `
 
