@@ -34,7 +34,7 @@ export default function RestaurantCard({
           <HeartIcon name='heart-outline' />
         </StyledTouchableOpacity>
         <Title>{name}</Title>
-        <SubTitle>Price: {price}</SubTitle>
+        <SubTitle>Price: {price ? price : 'N/A'}</SubTitle>
       </TouchableOpacity>
     </CardWrapper>
   )
