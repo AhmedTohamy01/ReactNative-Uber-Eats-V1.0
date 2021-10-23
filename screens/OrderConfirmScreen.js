@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { Text, View, TouchableOpacity } from 'react-native'
+import React, { useContext, useEffect } from 'react'
+import { Text, View, TouchableOpacity, BackHandler } from 'react-native'
 import styled from 'styled-components'
 import LottieView from 'lottie-react-native'
 import { MainContext } from '../context/MainContext'
@@ -11,6 +11,21 @@ export default function OrderConfirmScreen({ route, navigation }) {
     navigation.navigate('HomeScreen')
     setCartItems([])
   }
+
+  useEffect(() => {
+    const backAction = () => {
+      navigation.navigate('HomeScreen')
+      setCartItems([])
+      return true
+    }
+
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction
+    )
+
+    return () => backHandler.remove()
+  }, [])
 
   return (
     <PageWrapper>
