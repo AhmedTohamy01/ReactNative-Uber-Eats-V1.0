@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Text, View, TouchableOpacity, ScrollView } from 'react-native'
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  ScrollView,
+  BackHandler,
+  Alert,
+} from 'react-native'
 import styled from 'styled-components'
 import Buttons from '../components/Home/Buttons'
 import Categories from '../components/Home/Categories'
@@ -32,6 +39,26 @@ export default function HomeScreen({ navigation }) {
   useEffect(() => {
     setFilteredData(getFilteredData())
   }, [activeCategory])
+
+  useEffect(() => {
+    const backAction = () => {
+      Alert.alert('Hold on!', 'This will exit the app, are you sure ?', [
+        {
+          text: 'Cancel',
+          onPress: () => null,
+        },
+        { text: 'YES', onPress: () => BackHandler.exitApp() },
+      ])
+      return true
+    }
+
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction
+    )
+
+    return () => backHandler.remove()
+  }, [])
 
   return (
     <PageWrapper>
