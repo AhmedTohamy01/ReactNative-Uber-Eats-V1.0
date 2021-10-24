@@ -17,7 +17,7 @@ export default function RestaurantCard({
   return (
     <CardWrapper>
       <TouchableOpacity
-        activeOpacity={1}
+        activeOpacity={0.5}
         onPress={() => {
           navigation.navigate('RestaurantScreen', {
             name,
