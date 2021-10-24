@@ -1,8 +1,9 @@
 import React from 'react'
-import { Text, View, Image } from 'react-native'
+import { Text, View, Image, TouchableOpacity, Platform } from 'react-native'
 import styled from 'styled-components'
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
 
-export default function RestaurantBanner({ route }) {
+export default function RestaurantBanner({ route, handleBackIconIOS }) {
   return (
     <BannerWrapper>
       <BannerImage
@@ -10,6 +11,9 @@ export default function RestaurantBanner({ route }) {
           uri: route.params.image,
         }}
       />
+      <StyledTouchableOpacity onPress={handleBackIconIOS}>
+        <BackIcon name='chevron-left' Platform={Platform} />
+      </StyledTouchableOpacity>
       <InfoWrapper>
         <Title>{route.params.name}</Title>
         <SubTitle>
@@ -26,9 +30,7 @@ export default function RestaurantBanner({ route }) {
 
 const BannerWrapper = styled(View)`
   /* border: 1px solid red; */
-  /* align-items: center; */
   width: 100%;
-  /* height: 250px; */
   padding-bottom: 10px;
 `
 
@@ -36,6 +38,20 @@ const BannerImage = styled(Image)`
   /* border: 1px solid red; */
   width: 100%;
   height: 180px;
+`
+
+const StyledTouchableOpacity = styled(TouchableOpacity)`
+  /* border: 1px solid red; */
+  position: absolute;
+  left: 20px;
+  top: 20px;
+`
+
+const BackIcon = styled(FontAwesome)`
+  /* border: 1px solid red; */
+  font-size: 45px;
+  color: white;
+  display: ${(props) => (props.Platform.OS === 'ios' ? 'flex' : 'none')};
 `
 
 const InfoWrapper = styled(View)`
