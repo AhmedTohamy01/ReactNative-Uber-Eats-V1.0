@@ -10,6 +10,26 @@ import { MainContext } from '../context/MainContext'
 export default function RestaurantScreen({ route, navigation }) {
   const { cartItems, setCartItems } = useContext(MainContext)
 
+  const handleBackIconIOS = () => {
+    if (cartItems.length > 0) {
+      Alert.alert('Hold on!', 'This will empty the cart, are you sure ?', [
+        {
+          text: 'Cancel',
+          onPress: () => null,
+        },
+        {
+          text: 'YES',
+          onPress: () => {
+            navigation.navigate('HomeScreen')
+            setCartItems([])
+          },
+        },
+      ])
+    } else {
+			navigation.navigate('HomeScreen')
+    }
+  }
+
   useEffect(() => {
     const backAction = () => {
       if (cartItems.length > 0) {
@@ -40,7 +60,7 @@ export default function RestaurantScreen({ route, navigation }) {
 
   return (
     <PageWrapper>
-      <RestaurantBanner route={route} />
+      <RestaurantBanner route={route} handleBackIconIOS={handleBackIconIOS} />
       <StyledDivider />
       <Menu />
       <ViewCart navigation={navigation} />
