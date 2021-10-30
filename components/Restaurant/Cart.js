@@ -39,6 +39,10 @@ export default function Cart({ route, navigation }) {
     navigation.navigate('OrderConfirmScreen')
   }
 
+  const handleGoBackClick = () => {
+    setShowCartModal(false)
+  }
+
   return (
     <Modal
       animationType='slide'
@@ -74,7 +78,7 @@ export default function Cart({ route, navigation }) {
             <Total>{getTotal()}</Total>
           </TotalWrapper>
           <ButtonsWrapper>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleGoBackClick}>
               <BackButton>Go Back </BackButton>
             </TouchableOpacity>
             <TouchableOpacity onPress={handleCheckoutClick}>
