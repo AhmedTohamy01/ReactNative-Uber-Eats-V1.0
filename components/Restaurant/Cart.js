@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { Text, TouchableOpacity, Modal, View, ScrollView } from 'react-native'
 import { MainContext } from '../../context/MainContext'
 
-export default function Cart({ route, navigation }) {
-  const { showCartModal, setShowCartModal, cartItems } = useContext(MainContext)
+export default function Cart({ route, navigation, setRefresh, refresh }) {
+  const { showCartModal, setShowCartModal, cartItems, setCartItems } = useContext(MainContext)
 
   const getSubTotal = () => {
     const subTotal = cartItems.reduce((acc, item) => {
@@ -41,6 +41,12 @@ export default function Cart({ route, navigation }) {
 
   const handleGoBackClick = () => {
     setShowCartModal(false)
+  }
+
+  const handleClearCartClick = () => {
+    setCartItems([])
+    setShowCartModal(false)
+    setRefresh(!refresh)
   }
 
   return (
@@ -84,7 +90,7 @@ export default function Cart({ route, navigation }) {
             <TouchableOpacity onPress={handleCheckoutClick}>
               <CheckoutButton>Checkout</CheckoutButton>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleClearCartClick}>
               <ClearButton>Clear Cart</ClearButton>
             </TouchableOpacity>
           </ButtonsWrapper>

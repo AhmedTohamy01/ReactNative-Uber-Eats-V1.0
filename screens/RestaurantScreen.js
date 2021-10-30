@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import { View, BackHandler, Alert } from 'react-native'
 import styled from 'styled-components'
 import RestaurantBanner from '../components/Restaurant/RestaurantBanner'
@@ -9,6 +9,7 @@ import { MainContext } from '../context/MainContext'
 
 export default function RestaurantScreen({ route, navigation }) {
   const { cartItems, setCartItems } = useContext(MainContext)
+  const [refresh, setRefresh] = useState(false)
 
   const handleBackIconIOS = () => {
     if (cartItems.length > 0) {
@@ -62,9 +63,9 @@ export default function RestaurantScreen({ route, navigation }) {
     <PageWrapper>
       <RestaurantBanner route={route} handleBackIconIOS={handleBackIconIOS} />
       <StyledDivider />
-      <Menu />
+      <Menu refresh={refresh}/>
       <ViewCart navigation={navigation} />
-      <Cart route={route} navigation={navigation} />
+      <Cart route={route} navigation={navigation} setRefresh={setRefresh} refresh={refresh} />
     </PageWrapper>
   )
 }
