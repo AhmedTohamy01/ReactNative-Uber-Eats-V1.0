@@ -3,7 +3,7 @@ import { Text, TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
 import { MainContext } from '../../context/MainContext'
 
-export default function ViewCart({}) {
+export default function ViewCart({ }) {
   const { cartItems, setShowCartModal } = useContext(MainContext)
   const total = cartItems.reduce((acc, item) => {
     const price = Number(item.price.replace('$', ''))

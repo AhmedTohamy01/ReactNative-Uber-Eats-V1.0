@@ -6,7 +6,7 @@ export const MainContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([])
   const [showCartModal, setShowCartModal] = useState(false)
 
-	return (
+  return (
     <MainContext.Provider
       value={{ cartItems, setCartItems, showCartModal, setShowCartModal }}
     >

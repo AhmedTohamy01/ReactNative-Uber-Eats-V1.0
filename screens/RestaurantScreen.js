@@ -27,7 +27,7 @@ export default function RestaurantScreen({ route, navigation }) {
         },
       ])
     } else {
-			navigation.navigate('HomeScreen')
+      navigation.navigate('HomeScreen')
     }
   }
 
@@ -63,7 +63,7 @@ export default function RestaurantScreen({ route, navigation }) {
     <PageWrapper>
       <RestaurantBanner route={route} handleBackIconIOS={handleBackIconIOS} />
       <StyledDivider />
-      <Menu refresh={refresh}/>
+      <Menu refresh={refresh} />
       <ViewCart navigation={navigation} />
       <Cart route={route} navigation={navigation} setRefresh={setRefresh} refresh={refresh} />
     </PageWrapper>
