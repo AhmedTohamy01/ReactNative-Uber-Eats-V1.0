@@ -84,15 +84,15 @@ export default function Cart({ route, navigation, setRefresh, refresh }) {
             <Total>{getTotal()}</Total>
           </TotalWrapper>
           <ButtonsWrapper>
-            <TouchableOpacity onPress={handleGoBackClick}>
+            <StyledTouchableOpacity onPress={handleGoBackClick}>
               <BackButton>Go Back </BackButton>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={handleCheckoutClick}>
+            </StyledTouchableOpacity>
+            <StyledTouchableOpacity onPress={handleCheckoutClick}>
               <CheckoutButton>Checkout</CheckoutButton>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={handleClearCartClick}>
+            </StyledTouchableOpacity>
+            <StyledTouchableOpacity onPress={handleClearCartClick}>
               <ClearButton>Clear Cart</ClearButton>
-            </TouchableOpacity>
+            </StyledTouchableOpacity>
           </ButtonsWrapper>
         </ModalContent>
       </ModalContentWrapper>
@@ -188,35 +188,43 @@ const ButtonsWrapper = styled(View)`
   justify-content: space-around;
 `
 
-const CheckoutButton = styled(Text)`
+const StyledTouchableOpacity = styled(TouchableOpacity)`
   /* border: 1px solid red; */
   background-color: black;
-  color: white;
   padding: 15px;
-  width: 150px;
   border-radius: 30px;
+  margin: 20px;
+`
+
+const CheckoutButton = styled(Text)`
+  /* border: 1px solid red; */
+  /* background-color: black; */
+  color: white;
+  /* padding: 15px; */
+  width: 100px;
+  /* border-radius: 30px; */
   text-align: center;
-  margin: 20px auto;
+  /* margin: 20px auto; */
 `
 
 const ClearButton = styled(Text)`
   /* border: 1px solid red; */
-  background-color: black;
+  /* background-color: black; */
   color: white;
-  padding: 15px;
-  width: 100px;
-  border-radius: 30px;
+  /* padding: 15px; */
+  width: 80px;
+  /* border-radius: 30px; */
   text-align: center;
-  margin: auto;
+  /* margin: auto; */
 `
 
 const BackButton = styled(Text)`
   /* border: 1px solid red; */
-  background-color: black;
+  /* background-color: black; */
   color: white;
-  padding: 15px;
-  width: 100px;
-  border-radius: 30px;
+  /* padding: 15px; */
+  width: 80px;
+  /* border-radius: 30px; */
   text-align: center;
-  margin: auto;
+  /* margin: auto; */
 `
