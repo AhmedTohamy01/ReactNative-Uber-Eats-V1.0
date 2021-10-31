@@ -5,7 +5,7 @@ import LottieView from 'lottie-react-native'
 import { MainContext } from '../context/MainContext'
 
 export default function OrderConfirmScreen({ route, navigation }) {
-  const { setCartItems } = useContext(MainContext)
+  const { setCartItems, refreshCheckboxes, setRefreshCheckboxes } = useContext(MainContext)
 
   const hanldeBackToHome = () => {
     navigation.navigate('HomeScreen')
@@ -27,6 +27,7 @@ export default function OrderConfirmScreen({ route, navigation }) {
 
   useEffect(() => {
     setCartItems([])
+    setRefreshCheckboxes(!refreshCheckboxes)
   }, [])
 
   return (
