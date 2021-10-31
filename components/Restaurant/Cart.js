@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { Text, TouchableOpacity, Modal, View, ScrollView } from 'react-native'
 import { MainContext } from '../../context/MainContext'
 
-export default function Cart({ route, navigation, setRefresh, refresh }) {
-  const { showCartModal, setShowCartModal, cartItems, setCartItems } = useContext(MainContext)
+export default function Cart({ route, navigation }) {
+  const { showCartModal, setShowCartModal, cartItems, setCartItems, refreshCheckboxes, setRefreshCheckboxes } = useContext(MainContext)
 
   const getSubTotal = () => {
     const subTotal = cartItems.reduce((acc, item) => {
@@ -46,7 +46,7 @@ export default function Cart({ route, navigation, setRefresh, refresh }) {
   const handleClearCartClick = () => {
     setCartItems([])
     setShowCartModal(false)
-    setRefresh(!refresh)
+    setRefreshCheckboxes(!refreshCheckboxes)
   }
 
   return (

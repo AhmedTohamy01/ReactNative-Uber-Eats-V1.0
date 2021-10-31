@@ -5,8 +5,8 @@ import { foods } from '../../data/MenuData'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
 import { MainContext } from '../../context/MainContext'
 
-export default function Menu({ refresh }) {
-  const { cartItems, setCartItems } = useContext(MainContext)
+export default function Menu() {
+  const { cartItems, setCartItems, refreshCheckboxes } = useContext(MainContext)
 
   return (
     <MenuWrapper>
@@ -14,7 +14,7 @@ export default function Menu({ refresh }) {
         {foods.map((item, index) => (
           <ItemWrapper key={index}>
             <BouncyCheckbox
-              key={refresh}
+              key={refreshCheckboxes}
               onPress={(isChecked) =>
                 isChecked
                   ? setCartItems([...cartItems, item])

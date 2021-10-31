@@ -10,7 +10,6 @@ import { MainContext } from '../context/MainContext'
 
 export default function RestaurantScreen({ route, navigation }) {
   const { cartItems, setCartItems } = useContext(MainContext)
-  const [refresh, setRefresh] = useState(false)
   // const navigation = useNavigation();
 
   const handleBackIconIOS = () => {
@@ -72,9 +71,9 @@ export default function RestaurantScreen({ route, navigation }) {
     <PageWrapper>
       <RestaurantBanner route={route} handleBackIconIOS={handleBackIconIOS} />
       <StyledDivider />
-      <Menu refresh={refresh} />
+      <Menu />
       <ViewCart navigation={navigation} />
-      <Cart route={route} navigation={navigation} setRefresh={setRefresh} refresh={refresh} />
+      <Cart route={route} navigation={navigation} />
     </PageWrapper>
   )
 }
