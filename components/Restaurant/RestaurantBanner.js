@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import { Text, View, Image, TouchableOpacity, Platform } from 'react-native'
 import styled from 'styled-components'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
