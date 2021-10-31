@@ -6,10 +6,12 @@ import Menu from '../components/Restaurant/Menu'
 import ViewCart from '../components/Restaurant/ViewCart'
 import Cart from '../components/Restaurant/Cart'
 import { MainContext } from '../context/MainContext'
+// import { useNavigation } from '@react-navigation/native';
 
 export default function RestaurantScreen({ route, navigation }) {
   const { cartItems, setCartItems } = useContext(MainContext)
   const [refresh, setRefresh] = useState(false)
+  // const navigation = useNavigation();
 
   const handleBackIconIOS = () => {
     if (cartItems.length > 0) {
@@ -58,6 +60,13 @@ export default function RestaurantScreen({ route, navigation }) {
 
     return () => backHandler.remove()
   }, [cartItems])
+
+  useEffect(() => (
+    navigation.addListener('beforeRemove', (e) => {
+      // e.preventDefault()
+      setCartItems([])
+    })
+  ), [navigation])
 
   return (
     <PageWrapper>

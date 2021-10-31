@@ -9,13 +9,11 @@ export default function OrderConfirmScreen({ route, navigation }) {
 
   const hanldeBackToHome = () => {
     navigation.navigate('HomeScreen')
-    setCartItems([])
   }
 
   useEffect(() => {
     const backAction = () => {
       navigation.navigate('HomeScreen')
-      setCartItems([])
       return true
     }
 
@@ -25,6 +23,10 @@ export default function OrderConfirmScreen({ route, navigation }) {
     )
 
     return () => backHandler.remove()
+  }, [])
+
+  useEffect(() => {
+    setCartItems([])
   }, [])
 
   return (
